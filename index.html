@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name - Resume</title>
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #333;
+      --card: #fff;
+      --accent: #222;
+    }
+
+    body.dark-mode {
+      --bg: #1e1e1e;
+      --text: #f5f5f5;
+      --card: #2a2a2a;
+      --accent: #ccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--card);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      color: var(--text);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .job-title {
+      font-weight: bold;
+    }
+
+    .date {
+      float: right;
+      color: var(--accent);
+    }
+
+    button {
+      padding: 8px 14px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px 0;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #222;
+    }
+
+    @media (max-width: 600px) {
+      .date {
+        float: none;
+        display: block;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Your Full Name</h1>
+      <p>Email: youremail@example.com | Phone: 123-456-7890 | Location: Your City</p>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode 🌗</button>
+    </header>
+
+    <div class="section">
+      <h2>Summary</h2>
+      <p>A brief professional summary goes here. One or two sentences that say what you’re good at or passionate about.</p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <span class="job-title">Your Degree</span> - Your University <span class="date">2019 - 2023</span>
+          <br /> Major: Your Major
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <span class="job-title">Job Title</span> - Company Name <span class="date">2023 - Present</span>
+          <br /> Short description of your role and achievements.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React, Git, SQL</li>
+        <li>Communication, Teamwork, Problem-solving</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <button onclick="toggleProjects()">Show/Hide Projects 📁</button>
+      <ul id="projects-list">
+        <li>
+          <span class="job-title">Project Name</span>
+          <br /> A short explanation of what the project is and what technologies you used.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function toggleProjects() {
+      const list = document.getElementById("projects-list");
+      if (list.style.display === "none") {
+        list.style.display = "block";
+      } else {
+        list.style.display = "none";
+      }
+    }
+
+    // Optional: hide projects by default
+    document.getElementById("projects-list").style.display = "none";
+  </script>
+</body>
+</html>
